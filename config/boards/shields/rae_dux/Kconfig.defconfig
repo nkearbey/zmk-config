@@ -1,19 +1,36 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_RAE_DUX_LEFT
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
+
+if SHIELD_RAE_DUX_DONGLE || SHIELD_RAE_DUX_LEFT || SHIELD_RAE_DUX_RIGHT
 
 config ZMK_KEYBOARD_NAME
 	default "rae-dux"
 
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
+endif
+
+
+
+if SHIELD_RAE_DUX_DONGLE_LEFT || SHIELD_RAE_DUX_DONGLE_RIGHT || SHIELD_RAE_DUX_RIGHT
+
+config ZMK_SPLIT
 	default y
 
 endif
 
-if SHIELD_RAE_DUX_LEFT || SHIELD_RAE_DUX_RIGHT
+
+
+if SHIELD_RAE_DUX_DONGLE || SHIELD_RAE_DUX_LEFT
 
 config ZMK_SPLIT
+	default y
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
 
 endif
