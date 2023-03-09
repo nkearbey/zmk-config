@@ -12,6 +12,9 @@ if SHIELD_RAE_DUX_DONGLE || SHIELD_RAE_DUX_LEFT || SHIELD_RAE_DUX_RIGHT
 config ZMK_KEYBOARD_NAME
 	default "rae-dux"
 
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
 endif
 
 
